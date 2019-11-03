@@ -5,7 +5,7 @@ function makeSound(key) {
 
   switch (key) {
     case "w":
-      var oHihat = new Audio("sounds/Open-hihat.WAV");
+      var oHihat = new Audio("sounds/Open-hihat.wav");
       oHihat.play();
 
 
@@ -19,7 +19,7 @@ function makeSound(key) {
       tom2.play();
       break;
     case "d":
-      var cHihat = new Audio("sounds/Closed-hihat.WAV");
+      var cHihat = new Audio("sounds/Closed-hihat.wav");
       cHihat.play();
       break;
     case "j":
