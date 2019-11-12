@@ -5,7 +5,7 @@ function makeSound(key) {
 
   switch (key) {
     case "w":
-      var oHihat = new Audio("sounds/Open-hihat.wav");
+      var oHihat = new Audio("sounds/Open-hihat.WAV");
       oHihat.play();
 
 
@@ -19,7 +19,7 @@ function makeSound(key) {
       tom2.play();
       break;
     case "d":
-      var cHihat = new Audio("sounds/Closed-hihat.wav");
+      var cHihat = new Audio("sounds/Closed-hihat.WAV");
       cHihat.play();
       break;
     case "j":
@@ -35,7 +35,7 @@ function makeSound(key) {
       snare.play();
       break;
     default:
-      console.log(buttonInnerHTML);
+      //console.log(buttonInnerHTML);
 
   }
 
@@ -43,6 +43,8 @@ function makeSound(key) {
 
 document.addEventListener("keydown", function(event) {
   makeSound(event.key);
+  buttonAnimation(event.key);
+
 });
 
 for (var i = 0; i < numberOfButtons; i++) {
@@ -50,5 +52,13 @@ for (var i = 0; i < numberOfButtons; i++) {
     var buttonInnerHTML = this.innerHTML;
 
     makeSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
   });
+}
+
+function buttonAnimation(buttonKey){
+var currentKey= document.querySelector("."+buttonKey);
+currentKey.classList.add("pressed");
+setTimeout(function(){currentKey.classList.remove("pressed");},100);
+
 }
